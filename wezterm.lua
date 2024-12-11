@@ -2,6 +2,20 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+local function isWindows()
+  return package.config:sub(1,1) == '\\'
+end
+
+if isWindows() then
+  config.wsl_domains = {
+    {
+      name = 'WSL:Ubuntu',
+      distribution = 'Ubuntu-24.04',
+    },
+  }
+  config.default_domain = 'WSL:Ubuntu'
+end
+
 -- The filled in variant of the < symbol
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 
@@ -10,7 +24,7 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 config.color_scheme = "Catppuccin Mocha"
 config.max_fps = 120
-config.font = wezterm.font("JetBrainsMono NF", {
+config.font = wezterm.font("Berkeley Mono Variable", {
   weight = "Regular",
   stretch = "Expanded",
 })
