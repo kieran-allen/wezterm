@@ -24,7 +24,7 @@ local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 config.color_scheme = "Catppuccin Mocha"
 config.max_fps = 120
-config.font = wezterm.font_with_fallback { "Berkeley Mono Variable", "0xProto Nerd Font" }
+config.font = wezterm.font_with_fallback { "Berkeley Mono" }
 config.font_size = 13
 config.line_height = 1.2
 config.window_padding = {
